@@ -50,3 +50,16 @@ utils.environmentNoting();
 //     content
 //   }
 // });
+
+import Chart from './chart.js';
+import BigMap from './bigmap.js';
+import Map from './map.js';
+
+
+const chart1 = new Chart('#chartTrend');
+const bigmap = new BigMap("#country");
+const map = new Map("#mapCounties");
+
+chart1.render();
+bigmap.render();
+map.render();
