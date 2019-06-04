@@ -137,6 +137,15 @@ h2 {
 	margin-left:auto;
 }
 
+#chartTrend .c3-line {
+	opacity:0 !important;
+}
+
+#chartTrend .c3-area {
+  opacity: 1 !important;
+}
+
+
 .slide {
 
 	width:800px;

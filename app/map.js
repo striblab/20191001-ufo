@@ -3,7 +3,6 @@ import * as d3 from 'd3';
 import * as d3tooltip from 'd3-tooltip';
 import * as topojson from 'topojson';
 import mncounties from '../sources/counties.json';
-import nilfMN from '../sources/nilf_mn.json';
 
 class Map {
 
@@ -130,32 +129,10 @@ class Map {
             .style("stroke-width", '1')
             .style("stroke", "#ffffff")
             .style("fill", function(d) {
-
-                for (var i=0; i < dataMN.length; i++) {
-                    // console.log(dataMN[i].Geography);
-
-                    if (dataMN[i].Geography == d.properties.COUNTYNAME) {
-                        
-                        return self.colorScale(dataMN[i].Bucket);
-                    }
-                }
-
                 return "#dddddd";
             })
             .call(tooltip(function(d, i) {
-                var votes;
-                var diff;
-                var color = "#ffffff";
-                var nilf = 0;
-
-                for (var i = 0; i < dataMN.length; i++) {
-                    if (dataMN[i].Geography == d.properties.COUNTYNAME) {
-                        var points = dataMN[i].Bucket;
-                        var pct = dataMN[i].PctNILF;
-                        var color_scale = d3.scaleLinear().domain([4, 3, 2, 1]).range(['#D1E6E1', '#67B4C2', '#3580A3', '#0D4673']);
-                        return "<div class='countyName'>" + d.properties.COUNTYNAME + "</div><div class='number'><span class='legendary' style='background-color:" + color_scale(points) + ";'>" + d3.format(".0%")(pct) + "</span> of middle-aged men not in labor force</div>"
-                    }
-                }
+                return "<div class='countyName'>" + d.properties.COUNTYNAME + " County</div>";
               }));
 
      //City labels
