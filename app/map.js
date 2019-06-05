@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 import * as d3tooltip from 'd3-tooltip';
 import * as topojson from 'topojson';
 import mncounties from '../sources/counties.json';
+import mnhex from '../sources/mnhex.json';
 
 class Map {
 
@@ -48,7 +49,7 @@ class Map {
         var g2 = svg.append("g");
         var tooltip = d3tooltip(d3);
 
-        var dataMN = nilfMN.mncounties;
+        // var dataMN = nilfMN.mncounties;
 
         
 
@@ -113,6 +114,21 @@ class Map {
 
             };
         };
+
+        g.append("g")
+        .attr("class", "hexes")
+        .selectAll("path")
+        .data(topojson.feature(mnhex, mnhex.objects.mnhex).features)
+        .enter().append("path")
+        .attr("d", path)
+        .attr("class", function(d) {
+            return "hex";
+        })
+        .style("stroke-width", '1')
+        .style("stroke", "#ffffff")
+        .style("fill", function(d) {
+            return "#333333";
+        });
 
         g.append("g")
             .attr("class", "counties")

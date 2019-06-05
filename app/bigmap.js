@@ -4,6 +4,7 @@ import us from '../sources/us_counties.json';
 import st from '../sources/us_states_topo.json';
 import * as d3 from 'd3';
 import * as topojson from 'topojson';
+import ushex from '../sources/ushex.json';
 
 class BigMap {
     constructor(target) {
@@ -142,6 +143,19 @@ class BigMap {
                     lat: 42.358056,
                     name: "Boston"
                 }];
+
+                g.append("g")
+                .attr("class", "hex")
+                .selectAll("path")
+                .data(ushex.features)
+                .enter().append("path")
+                .attr("d", path)
+                .style("fill", function(d) {
+                    return "#333333";
+                })
+                .style("stroke-width", ".5px")
+                .style("stroke", "#fff");
+
 
                 g.append("g")
                     .attr("class", "states")
