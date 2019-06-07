@@ -116,21 +116,6 @@ class Map {
         };
 
         g.append("g")
-        .attr("class", "hexes")
-        .selectAll("path")
-        .data(topojson.feature(mnhex, mnhex.objects.mnhex).features)
-        .enter().append("path")
-        .attr("d", path)
-        .attr("class", function(d) {
-            return "hex";
-        })
-        .style("stroke-width", '1')
-        .style("stroke", "#ffffff")
-        .style("fill", function(d) {
-            return "#333333";
-        });
-
-        g.append("g")
             .attr("class", "counties")
             .selectAll("path")
             .data(topojson.feature(mncounties, mncounties.objects.counties).features)
@@ -150,6 +135,33 @@ class Map {
             .call(tooltip(function(d, i) {
                 return "<div class='countyName'>" + d.properties.COUNTYNAME + " County</div>";
               }));
+
+
+        g.append("g")
+        .attr("class", "hexes")
+        .selectAll("path")
+        .data(topojson.feature(mnhex, mnhex.objects.mnhex).features)
+        .enter().append("path")
+        .attr("d", path)
+        .attr("class", function(d) {
+            return "hex";
+        })
+        .style("stroke-width", '1')
+        .style("stroke", "#ffffff")
+        .style("opacity", function(d) {
+            if (d.properties.NUMPOINTS > 0) {
+                return 1;
+            } else {
+                return 0;
+            } 
+        })
+        .style("fill", function(d) {
+            if (d.properties.NUMPOINTS > 0) {
+                return "#333333";
+            } else {
+                return "#ffffff";
+            } 
+        });
 
      //City labels
         var marks = [{

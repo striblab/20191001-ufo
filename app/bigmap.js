@@ -144,18 +144,6 @@ class BigMap {
                     name: "Boston"
                 }];
 
-                g.append("g")
-                .attr("class", "hex")
-                .selectAll("path")
-                .data(ushex.features)
-                .enter().append("path")
-                .attr("d", path)
-                .style("fill", function(d) {
-                    return "#333333";
-                })
-                .style("stroke-width", ".5px")
-                .style("stroke", "#fff");
-
 
                 g.append("g")
                     .attr("class", "states")
@@ -179,6 +167,29 @@ class BigMap {
                     .call(tooltip(function(d, i) {
                         return mapTips(d, race, dataCompare);
                     }));
+
+                    g.append("g")
+                    .attr("class", "hex")
+                    .selectAll("path")
+                    .data(ushex.features)
+                    .enter().append("path")
+                    .attr("d", path)
+                    .style("opacity", function(d) {
+                        if (d.properties.NUMPOINTS > 0) {
+                            return 1;
+                        } else {
+                            return 0;
+                        } 
+                    })
+                    .style("fill", function(d) {
+                        if (d.properties.NUMPOINTS > 0) {
+                            return "#333333";
+                        } else {
+                            return "#ffffff";
+                        } 
+                    })
+                    .style("stroke-width", ".5px")
+                    .style("stroke", "#fff");
 
                 g.append("path")
                     //.datum(topojson.mesh(us, us.features, function(a, b) { return a !== b; }))
