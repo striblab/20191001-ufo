@@ -69,6 +69,8 @@ class BigMap {
         var width = 800,
         height = 500,
         centered;
+
+        var colorScale = d3.scaleLinear().domain([1,1000]).range(['#D1E6E1', '#0D4673']);
         
         var projection = d3.geoAlbersUsa().scale(1000).translate([400, 260]);
 
@@ -183,7 +185,7 @@ class BigMap {
                     })
                     .style("fill", function(d) {
                         if (d.properties.NUMPOINTS > 0) {
-                            return "#333333";
+                            return colorScale(d.properties.NUMPOINTS);
                         } else {
                             return "#ffffff";
                         } 

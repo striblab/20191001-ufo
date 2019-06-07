@@ -14,7 +14,7 @@ class Map {
         this.g2 = this.svg.append("g");
         this.zoomed = false;
         this.scaled = $(target).width() / 520;
-        this.colorScale = d3.scaleLinear().domain([4, 3, 2, 1]).range(['#D1E6E1', '#67B4C2', '#3580A3', '#0D4673']);
+        this.colorScale = d3.scaleLinear().domain([1,100]).range(['#D1E6E1', '#0D4673']);
     }
 
     /********** PRIVATE METHODS **********/
@@ -157,7 +157,7 @@ class Map {
         })
         .style("fill", function(d) {
             if (d.properties.NUMPOINTS > 0) {
-                return "#333333";
+                return self.colorScale(d.properties.NUMPOINTS);
             } else {
                 return "#ffffff";
             } 
