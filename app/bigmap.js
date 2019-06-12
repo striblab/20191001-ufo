@@ -187,9 +187,9 @@ class BigMap {
                         if (d.properties.NUMPOINTS > 0) {
                             return colorScale(d.properties.NUMPOINTS);
                         } else {
-                            return "#ffffff";
+                            ret
+                    })urn "#ffffff";
                         } 
-                    })
                     .style("stroke-width", ".5px")
                     .style("stroke", "#fff");
 
