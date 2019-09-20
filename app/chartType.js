@@ -2,7 +2,7 @@
 import * as d3 from 'd3';
 import * as c3 from 'c3';
 
-class Chart {
+class ChartType {
 
     constructor(target) {
         this.target = target;
@@ -27,13 +27,18 @@ class Chart {
                     ['x', "light", "circle", "triangle", "unknown", "sphere", "fireball", "other", "disk", "oval", "formation", "cigar", "flash", "rectangle", "chevron", "changing", "diamond", "teardrop", "cylinder", "egg", "cross", "cone", "pyramid"],
                     ['value', 313, 180, 161, 147, 102, 95, 94, 81, 68, 62, 40, 32, 31, 25, 24, 18, 14, 11, 11, 5, 2, 1]
                 ],
-                type: 'bar'
+                type: 'bar',
+                labels: {
+                    format: {
+                        'value': d3.format(',')
+                    }
+                }
             },
             legend: {
                 show: false
             },
             color: {
-                pattern: ['#333']
+                pattern: ['#7F98AA']
             },
             axis: {
                 rotated: true,
@@ -59,6 +64,6 @@ class Chart {
 }
 
 export {
-    Chart as
+    ChartType as
     default
 }

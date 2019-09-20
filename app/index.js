@@ -52,14 +52,14 @@ utils.environmentNoting();
 // });
 
 import Chart from './chart.js';
-import BigMap from './bigmap.js';
+import ChartType from './chartType.js';
 import Map from './map.js';
 
 
 const chart1 = new Chart('#chartTrend');
-const bigmap = new BigMap("#country");
+const chart2 = new ChartType("#country");
 const map = new Map("#mapCounties");
 
 chart1.render();
-bigmap.render();
+chart2.render();
 map.render();
