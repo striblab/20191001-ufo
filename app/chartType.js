@@ -24,8 +24,8 @@ class ChartType {
             data: {
                 x: 'x',
                 columns: [
-                    ['x', "light", "circle", "triangle", "unknown", "sphere", "fireball", "other", "disk", "oval", "formation", "cigar", "flash", "rectangle", "chevron", "changing", "diamond", "teardrop", "cylinder", "egg", "cross", "cone", "pyramid"],
-                    ['value', 313, 180, 161, 147, 102, 95, 94, 81, 68, 62, 40, 32, 31, 25, 24, 18, 14, 11, 11, 5, 2, 1]
+                    ['x', "light","circle","triangle","unknown","sphere","other","fireball","disk","oval","formation","unknown","cigar","flash","rectangle","changing","chevron","diamond","teardrop","egg","cylinder","cross","cone","pyramid"],
+                    ['value', 337,193,178,113,108,105,101,88,74,69,46,42,37,34,30,29,18,14,13,12,5,2,1]
                 ],
                 type: 'bar',
                 labels: {
@@ -43,7 +43,7 @@ class ChartType {
             axis: {
                 rotated: true,
                 y: {
-                    max: 350,
+                    max: 400,
                     min: 0,
                     padding: {
                         bottom: 0,
@@ -51,7 +51,7 @@ class ChartType {
                     },
                     tick: {
                         count: 8,
-                        values: [0, 50, 100, 150, 200, 250, 300, 350],
+                        values: [0, 50, 100, 150, 200, 250, 300, 350, 400],
                         format: d3.format(',')
                     }
                 },
