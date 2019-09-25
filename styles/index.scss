@@ -51,7 +51,12 @@ $selector-wrapper: '.strib-styles.ssa.ssb.ssc';
   margin-bottom: 3px;
   display: inline-block;
 }
-  
+
+.content-scroll {
+  max-width: 100% !important;
+  margin: auto;
+}
+
   @media (max-width:800px) {
 		#wrapper, .slide, .container-lg, .map, .map svg {
 			width: 100% !important;
