@@ -24,8 +24,8 @@ class ChartType {
             data: {
                 x: 'x',
                 columns: [
-                    ['x', "light","circle","triangle","unknown","sphere","other","fireball","disk","oval","formation","unknown","cigar","flash","rectangle","changing","chevron","diamond","teardrop","egg","cylinder","cross","cone","pyramid"],
-                    ['value', 337,193,178,113,108,105,101,88,74,69,46,42,37,34,30,29,18,14,13,12,5,2,1]
+                    ['x', "Light","Circle","Triangle","Unknown","Sphere","Other","Fireball","Disk","Oval","Formation","Cigar","Flash","Rectangle","Changing","Chevron","Diamond","Teardrop","Egg","Cylinder","Cross","Cone","Pyramid"],
+                    ['value', 337,193,178,159,108,105,101,88,74,69,42,37,34,30,29,18,14,13,12,5,2,1]
                 ],
                 type: 'bar',
                 labels: {
