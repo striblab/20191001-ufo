@@ -62,8 +62,8 @@ class Chart {
                         top: 0
                     },
                     tick: {
-                        count: 3,
-                        values: [0, 100, 200],
+                        count: 5,
+                        values: [0, 50, 100, 150, 200],
                         format: d3.format(',')
                     }
                 },
