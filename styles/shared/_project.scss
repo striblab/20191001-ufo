@@ -95,6 +95,10 @@ section.body {
 	margin-right: auto;
 }
 
+#mapCounties {
+	pointer-events:none !important;
+}
+
 section.body p {
 	max-width: 525px;
 	margin-left: auto;
